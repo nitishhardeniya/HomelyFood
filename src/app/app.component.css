@@ -1,0 +1,27 @@
+body {
+    font-family: Arial;
+    color: #698184;
+    background-color: #fafafa !important;
+}
+
+.page-topbar {
+    height: 90px;
+    background:#ccf9a9;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7cd0b6;
+    height: 50px;
+    text-align: center;
+}
+
+nav a{
+    height: 40px;
+    background:#ffffff;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    box-shadow:0px 1px 3px 0px rgba(0,0,0,0.12), 0px 1px 2px 0px rgba(63,92,97,0.24);
+}

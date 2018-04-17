@@ -1,0 +1,23 @@
+<h1>Hello {{username}}</h1>
+<form>
+    <label>Username: </label>
+    <input type="text" name="username" [(ngModel)]="username" />
+</form>
+<p>Email: {{email}}</p>
+<hr/>
+<button class="primary-btn" (click)="toggleHobby()">{{showHobbies ? "Hide hobbies" : "Show hobbies"}}</button>
+<div *ngIf="showHobbies">
+    <ul style="padding:0px">
+    <li class="user-list" *ngFor="let hobby of hobbies;let i=index">{{hobby}}
+    <!--<button class="primary-btn" (click) = "deleteHobby(i)">X</button>-->
+    </li>
+    </ul>
+</div>
+<!--
+<form (submit)="addHobby(hobby.value)">
+    <label>Add hobby:</label>
+    <input type="text" #hobby/>
+</form>
+-->
+
+<!--<button class="primary-btn" (click)="getAllMovies()">{{showHobbies ? "Hide hobbies" : "Show hobbies"}}</button>-->

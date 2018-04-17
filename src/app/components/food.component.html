@@ -1,0 +1,33 @@
+<div>
+    <h2>Food Component</h2>
+
+    <div class="main-content">
+        <form>
+            <div *ngFor="let fooditem of foodItems" class="item-container" style="margin-top: 20px">
+                <div class="food-thumb">
+                    <span class="item-price">&#8377;{{fooditem.price}}</span>
+                    <img [src]="fooditem.url" width="100%" height="200px">
+                    <div class="item-description">
+                        <span class="food-title">{{fooditem.title}}</span>
+                        <span class="food-detail">Some description for the food item</span>        
+                    </div>
+                    <button type="button" class="small-btn" (click)="decrementItemQuantity(fooditem)">-</button>
+                    <input type="text" [(ngModel)]="fooditem.quantity" name="quantity">
+                    <button type="button" class="small-btn" (click)="incrementItemQuantity(fooditem)">+</button>
+
+                    <!--<button class="add-item" (click)="addToCart(fooditem)">Add to basket</button>-->
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="item-list">
+        <span>Basket</span>
+        <ul *ngFor="let fi of items">
+            <li>{{fi.title}} -- {{fi.price}} x {{fi.quantity}} = {{fi.price * fi.quantity}}</li>
+        </ul>
+        <strong>Subtotal:</strong>{{getTotalCartValue()}}
+        <button type="button" class="add-item" (click)="continueToPayment()">Checkout</button>
+    </div>
+
+</div>
