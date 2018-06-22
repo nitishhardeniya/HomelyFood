@@ -11,9 +11,10 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
-var food_component_1 = require("./components/food.component");
-var checkout_component_1 = require("./components/checkout.component");
-var food_service_1 = require("./components/food.service");
+//import { UserComponent }  from './components/user.component';
+var food_component_1 = require("./components/food/food.component");
+var checkout_component_1 = require("./components/checkout/checkout.component");
+var food_service_1 = require("./components/food/food.service");
 // Route Configuration
 exports.routes = [
     { path: 'home', component: food_component_1.FoodComponent },

@@ -6,10 +6,10 @@ import { ModuleWithProviders }  from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent }  from './app.component';
-import { UserComponent }  from './components/user.component';
-import { FoodComponent }  from './components/food.component';
-import { CheckoutComponent }  from './components/checkout.component';
-import { FoodItemService } from './components/food.service';
+//import { UserComponent }  from './components/user.component';
+import { FoodComponent }  from './components/food/food.component';
+import { CheckoutComponent }  from './components/checkout/checkout.component';
+import { FoodItemService } from './components/food/food.service';
 
 // Route Configuration
 export const routes: Routes = [

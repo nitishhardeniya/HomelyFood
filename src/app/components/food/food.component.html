@@ -1,9 +1,9 @@
 <div>
-    <h2>Food Component</h2>
+    <!-- <h2>Food Component</h2> -->
 
-    <div class="main-content">
-        <form>
-            <div *ngFor="let fooditem of foodItems" class="item-container" style="margin-top: 20px">
+    <div class="container">
+        <form class="row">
+            <div *ngFor="let fooditem of foodItems" class="col-md-3" style="margin-top: 20px">
                 <div class="food-thumb">
                     <span class="item-price">&#8377;{{fooditem.price}}</span>
                     <img [src]="fooditem.url" width="100%" height="200px">
@@ -11,9 +11,9 @@
                         <span class="food-title">{{fooditem.title}}</span>
                         <span class="food-detail">Some description for the food item</span>        
                     </div>
-                    <button type="button" class="small-btn" (click)="decrementItemQuantity(fooditem)">-</button>
+                    <button type="button" class="btn btn-light" (click)="decrementItemQuantity(fooditem)">-</button>
                     <input type="text" [(ngModel)]="fooditem.quantity" name="quantity">
-                    <button type="button" class="small-btn" (click)="incrementItemQuantity(fooditem)">+</button>
+                    <button type="button" class="btn btn-light" (click)="incrementItemQuantity(fooditem)">+</button>
 
                     <!--<button class="add-item" (click)="addToCart(fooditem)">Add to basket</button>-->
                 </div>
