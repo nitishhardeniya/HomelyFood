@@ -24,15 +24,15 @@ var FoodComponent = (function () {
     };
     //public items: string[] = [];
     FoodComponent.prototype.addToCart = function (fooditem) {
-        /* if(this.items.indexOf(fooditem) <0){
+        if (this.items.indexOf(fooditem) < 0) {
             this.items.push(fooditem);
-        } */
+        }
     };
     ;
     FoodComponent.prototype.removeFromCart = function (fooditem) {
-        /* if(this.items.indexOf(fooditem) >0){
+        if (this.items.indexOf(fooditem) > 0) {
             this.items.splice(fooditem);
-        } */
+        }
     };
     FoodComponent.prototype.incrementItemQuantity = function (fooditem) {
         fooditem.quantity++;

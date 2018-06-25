@@ -1,4 +1,4 @@
-import { Food } from './food';
+import { Food } from './food/food';
 export const FOODITEMS :Food[] =  [{
         imgId:1,
         url:'https://www.skymetweather.com/themes/skymet/images/gallery/toplists/Top-Not-to-miss-food-items-in-Monsoon/5.jpg',

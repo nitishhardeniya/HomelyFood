@@ -26,16 +26,16 @@ export class FoodComponent {
     }
     //public items: string[] = [];
 
-    addToCart(fooditem:Food){
-        /* if(this.items.indexOf(fooditem) <0){
+    addToCart(fooditem:any){
+         if(this.items.indexOf(fooditem) <0){
             this.items.push(fooditem);
-        } */
+        }
     };
 
-    removeFromCart(fooditem:Food){
-        /* if(this.items.indexOf(fooditem) >0){
+    removeFromCart(fooditem:any){
+        if(this.items.indexOf(fooditem) >0){
             this.items.splice(fooditem);
-        } */
+        }
     }
 
     incrementItemQuantity(fooditem:Food){
