@@ -1,33 +1,43 @@
 <div>
     <!-- <h2>Food Component</h2> -->
 
-    <div class="container">
-        <form class="row">
-            <div *ngFor="let fooditem of foodItems" class="col-md-3" style="margin-top: 20px">
-                <div class="food-thumb">
-                    <span class="item-price">&#8377;{{fooditem.price}}</span>
-                    <img [src]="fooditem.url" width="100%" height="200px">
-                    <div class="item-description">
-                        <span class="food-title">{{fooditem.title}}</span>
-                        <span class="food-detail">Some description for the food item</span>        
+    <div class="main-content" [ngClass]="{'row':items.length>0,'container':items.length == 0}">
+        <div [ngClass]="{'col-md-10':items.length>0}">
+            <form class="row">
+                <div *ngFor="let fooditem of foodItems" class="col-md-3" style="margin-top: 20px">
+                    <div class="food-thumb">
+                        <span class="item-price">&#8377;{{fooditem.price}}</span>
+                        <img [src]="fooditem.url" width="100%" height="200px">
+                        <div class="item-description">
+                            <span class="food-title">{{fooditem.title}}</span>
+                            <span class="food-detail">Some description for the food item</span>        
+                        </div>
+                        <button type="button" class="btn btn-light" (click)="decrementItemQuantity(fooditem)">-</button>
+                        <input type="text" [(ngModel)]="fooditem.quantity" name="quantity">
+                        <button type="button" class="btn btn-light" (click)="incrementItemQuantity(fooditem)">+</button>
+    
+                        <button class="add-item" (click)="addToCart(fooditem)">Add to basket</button>
                     </div>
-                    <button type="button" class="btn btn-light" (click)="decrementItemQuantity(fooditem)">-</button>
-                    <input type="text" [(ngModel)]="fooditem.quantity" name="quantity">
-                    <button type="button" class="btn btn-light" (click)="incrementItemQuantity(fooditem)">+</button>
-
-                    <button class="add-item" (click)="addToCart(fooditem)">Add to basket</button>
                 </div>
+            </form>
+        </div>
+    
+        <div class="col-md-2" *ngIf="items.length>0">
+            <span>Basket</span>
+            <ul class="list-group" *ngFor="let fi of items">
+                <li class="list-group-item">
+                    {{fi.title}} -- {{fi.price}} x {{fi.quantity}} = <span class="item-total">{{fi.price * fi.quantity}}</span>
+                </li>
+            </ul>
+            
+            <div class="form-group">
+                <label>Subtotal:</label>
+                <span class="sub-total">{{getTotalCartValue()}}</span>
+                <button type="button" class="btn btn-success" (click)="continueToPayment()">Checkout</button>
             </div>
-        </form>
+            
+        </div>
     </div>
-
-    <div class="item-list" *ngIf="items.length>0">
-        <span>Basket</span>
-        <ul *ngFor="let fi of items">
-            <li>{{fi.title}} -- {{fi.price}} x {{fi.quantity}} = {{fi.price * fi.quantity}}</li>
-        </ul>
-        <strong>Subtotal:</strong>{{getTotalCartValue()}}
-        <button type="button" class="add-item" (click)="continueToPayment()">Checkout</button>
-    </div>
+    
 
 </div>

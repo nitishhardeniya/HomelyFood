@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
     <div class="page-topbar">
-      <div class="app-title">OrderFood</div>
+      <div class="app-title">Homely</div>
       <ul class="nav">
         <li class="nav-item">
           <a class="nav-link active" routerLink="/home" routerLinkActive="active">Explore</a>

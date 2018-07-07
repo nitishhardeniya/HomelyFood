@@ -23,35 +23,37 @@ var FoodComponent = (function () {
         //console.log(this.foodItems)
     };
     //public items: string[] = [];
-    FoodComponent.prototype.addToCart = function (fooditem) {
-        if (this.items.indexOf(fooditem) < 0) {
-            this.items.push(fooditem);
+    FoodComponent.prototype.addToCart = function (selectedItem) {
+        selectedItem.quantity++;
+        if (this.items.indexOf(selectedItem) < 0) {
+            this.items.push(selectedItem);
         }
     };
     ;
-    FoodComponent.prototype.removeFromCart = function (fooditem) {
-        if (this.items.indexOf(fooditem) > 0) {
-            this.items.splice(fooditem);
+    FoodComponent.prototype.removeFromCart = function (selectedItem) {
+        if (this.items.indexOf(selectedItem) > 0) {
+            this.items.splice(selectedItem);
         }
     };
-    FoodComponent.prototype.incrementItemQuantity = function (fooditem) {
-        fooditem.quantity++;
-        this.addToCart(fooditem);
+    FoodComponent.prototype.incrementItemQuantity = function (selectedItem) {
+        //selectedItem.quantity++;
+        this.addToCart(selectedItem);
     };
-    FoodComponent.prototype.decrementItemQuantity = function (fooditem) {
-        if (fooditem.quantity > 0) {
-            fooditem.quantity--;
-            this.removeFromCart(fooditem);
+    FoodComponent.prototype.decrementItemQuantity = function (selectedItem) {
+        if (selectedItem.quantity > 0) {
+            selectedItem.quantity--;
+            this.removeFromCart(selectedItem);
         }
     };
     FoodComponent.prototype.getTotalCartValue = function () {
-        //this.items.reduce(function(prev,next){
-        //    return prev + next.quantity*next.price;
-        //},0);
         var sum = 0;
         for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
-            var item = _a[_i];
+            var current = _a[_i];
         }
+        /*let itemsRef = this.items;
+        this.items.forEach(function(index){
+            sum += itemsRef[index].quantity * itemsRef[index].price;
+        });*/
         return sum;
     };
     FoodComponent.prototype.continueToPayment = function () {

@@ -69,3 +69,13 @@ body {
 	right: 10px;
 	width: 20%;
 }
+
+
+.item-total {
+	font-weight: 400;
+}
+
+.sub-total {
+	font-weight: 400;
+	color: lightgreen;
+}

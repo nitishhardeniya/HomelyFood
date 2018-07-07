@@ -11,7 +11,7 @@ import { FoodItemService } from './food.service';
 
 export class FoodComponent { 
     foodItems : Food[];
-    fooditem : string;
+    //fooditem : string;
     items:string[];
     username:string[];
     
@@ -26,40 +26,41 @@ export class FoodComponent {
     }
     //public items: string[] = [];
 
-    addToCart(fooditem:any){
-         if(this.items.indexOf(fooditem) <0){
-            this.items.push(fooditem);
+    addToCart(selectedItem:any){
+        selectedItem.quantity++
+        if(this.items.indexOf(selectedItem) <0){
+            this.items.push(selectedItem);
         }
     };
 
-    removeFromCart(fooditem:any){
-        if(this.items.indexOf(fooditem) >0){
-            this.items.splice(fooditem);
+    removeFromCart(selectedItem:any){
+        if(this.items.indexOf(selectedItem) >0){
+            this.items.splice(selectedItem);
         }
     }
 
-    incrementItemQuantity(fooditem:Food){
-        fooditem.quantity++;
-        this.addToCart(fooditem);
+    incrementItemQuantity(selectedItem:Food){
+        //selectedItem.quantity++;
+        this.addToCart(selectedItem);
     }
 
-    decrementItemQuantity(fooditem:Food){
-        if(fooditem.quantity > 0){
-            fooditem.quantity--;
-            this.removeFromCart(fooditem); 
+    decrementItemQuantity(selectedItem:Food){
+        if(selectedItem.quantity > 0){
+            selectedItem.quantity--;
+            this.removeFromCart(selectedItem); 
         }
-        
     }
 
     getTotalCartValue(){
-        //this.items.reduce(function(prev,next){
-        //    return prev + next.quantity*next.price;
-        //},0);
-
         let sum = 0;
-        for (let item of this.items) {
-            //sum += item.quantity * item.price;
+        for (let current of this.items) {
+            //sum += current.quantity * current.price;
         }
+        
+        /*let itemsRef = this.items;
+        this.items.forEach(function(index){
+            sum += itemsRef[index].quantity * itemsRef[index].price;
+        });*/
         return sum;
     }
 
