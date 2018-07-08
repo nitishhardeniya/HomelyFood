@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router, Route } from '@angular/router';
 import { Food } from './food';
 //import { FOODITEMS } from './mocks';
 import { FoodItemService } from './food.service';
+
 
 @Component({
     selector:'food-page',
@@ -15,7 +17,7 @@ export class FoodComponent {
     items:string[];
     username:string[];
     
-    constructor(private foodItemService:FoodItemService){
+    constructor(private foodItemService:FoodItemService,private router:Router){
         this.items = [];
     }
     
@@ -64,8 +66,10 @@ export class FoodComponent {
         return sum;
     }
 
-    continueToPayment(){
+    continueToDelivery(){
         //Call to API
         //redirect to payments page
+        console.log(this.router)
+        this.router.navigate(['/','delivery']);
     }
 }

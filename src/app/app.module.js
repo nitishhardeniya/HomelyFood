@@ -14,11 +14,13 @@ var app_component_1 = require("./app.component");
 //import { UserComponent }  from './components/user.component';
 var food_component_1 = require("./components/food/food.component");
 var checkout_component_1 = require("./components/checkout/checkout.component");
+var delivery_component_1 = require("./components/delivey/delivery.component");
 var food_service_1 = require("./components/food/food.service");
 // Route Configuration
 exports.routes = [
     { path: 'home', component: food_component_1.FoodComponent },
-    { path: 'checkout', component: checkout_component_1.CheckoutComponent }
+    { path: 'checkout', component: checkout_component_1.CheckoutComponent },
+    { path: 'delivery', component: delivery_component_1.DeliveryComponent }
 ];
 exports.routing = router_1.RouterModule.forRoot(exports.routes);
 var AppModule = (function () {
@@ -29,7 +31,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, exports.routing],
-        declarations: [app_component_1.AppComponent, food_component_1.FoodComponent, checkout_component_1.CheckoutComponent],
+        declarations: [app_component_1.AppComponent, food_component_1.FoodComponent, checkout_component_1.CheckoutComponent, delivery_component_1.DeliveryComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [food_service_1.FoodItemService]
     })

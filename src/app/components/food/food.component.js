@@ -9,11 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 //import { FOODITEMS } from './mocks';
 var food_service_1 = require("./food.service");
 var FoodComponent = (function () {
-    function FoodComponent(foodItemService) {
+    function FoodComponent(foodItemService, router) {
         this.foodItemService = foodItemService;
+        this.router = router;
         this.items = [];
     }
     FoodComponent.prototype.ngOnInit = function () {
@@ -56,9 +58,11 @@ var FoodComponent = (function () {
         });*/
         return sum;
     };
-    FoodComponent.prototype.continueToPayment = function () {
+    FoodComponent.prototype.continueToDelivery = function () {
         //Call to API
         //redirect to payments page
+        console.log(this.router);
+        this.router.navigate(['/', 'delivery']);
     };
     return FoodComponent;
 }());
@@ -68,7 +72,7 @@ FoodComponent = __decorate([
         templateUrl: './food.component.html',
         styleUrls: ['./food.component.css']
     }),
-    __metadata("design:paramtypes", [food_service_1.FoodItemService])
+    __metadata("design:paramtypes", [food_service_1.FoodItemService, router_1.Router])
 ], FoodComponent);
 exports.FoodComponent = FoodComponent;
 //# sourceMappingURL=food.component.js.map
