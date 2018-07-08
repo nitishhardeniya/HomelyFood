@@ -13,10 +13,12 @@ var router_1 = require("@angular/router");
 var DeliveryComponent = (function () {
     function DeliveryComponent(router) {
         this.router = router;
+        this.delivery = {};
     }
     DeliveryComponent.prototype.ngOnInit = function () {
     };
     DeliveryComponent.prototype.continueToPayment = function () {
+        console.log(this.delivery);
         this.router.navigate(['/', 'checkout']);
     };
     return DeliveryComponent;

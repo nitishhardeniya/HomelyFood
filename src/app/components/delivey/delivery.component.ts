@@ -8,13 +8,18 @@ import { Router, Route } from '@angular/router';
 })
 
 export class DeliveryComponent {
-    constructor(private router:Router){}
-
+    delivery:Object;
+    
+    constructor(private router:Router){
+        this.delivery = {};
+    }
+    
     ngOnInit (){
 
     }
 
     continueToPayment(){
+        console.log(this.delivery)
         this.router.navigate(['/','checkout']);
     }
 }

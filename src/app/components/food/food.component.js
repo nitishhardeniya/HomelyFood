@@ -59,7 +59,6 @@ var FoodComponent = (function () {
         return sum;
     };
     FoodComponent.prototype.continueToDelivery = function () {
-        //Call to API
         //redirect to payments page
         console.log(this.router);
         this.router.navigate(['/', 'delivery']);

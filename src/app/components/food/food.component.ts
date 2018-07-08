@@ -67,7 +67,6 @@ export class FoodComponent {
     }
 
     continueToDelivery(){
-        //Call to API
         //redirect to payments page
         console.log(this.router)
         this.router.navigate(['/','delivery']);

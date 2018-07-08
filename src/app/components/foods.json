@@ -1,23 +1,23 @@
 [
     {
       "imgId": 1,
-      "url": "https://www.skymetweather.com/themes/skymet/images/gallery/toplists/Top-Not-to-miss-food-items-in-Monsoon/5.jpg",
-      "title": "Momos",
-      "price": 120,
+      "url": "http://suhanakitchen.com/wp-content/uploads/2016/08/veg-biryani.jpg",
+      "title": "Veg biriyani",
+      "price": 105,
       "quantity": 0
     },
     {
       "imgId": 2,
-      "url": "http://www.indobase.com/recipes/rec-images/aloo-paratha.jpg",
+      "url": "https://english.newstracklive.com/uploads/lifestyle-health/food-recipe/Nov/04/big_thumb/maxresdefault_59fd980f73349.jpg",
       "title": "Aloo paratha",
       "price": 80,
       "quantity": 0
     },
     {
       "imgId": 3,
-      "url": "http://img3.rnkr-static.com/list_img_v2/4776/2504776/full/new-fast-food-items-2017.jpg",
-      "title": "Falafel",
-      "price": 160,
+      "url": "http://pindpunjabidhaba.in/manage/wp-content/uploads/2016/04/chole-chawal.jpg",
+      "title": "Chole chawal",
+      "price": 125,
       "quantity": 0
     },
     {
@@ -26,5 +26,21 @@
       "title": "Chole bhature",
       "price": 100,
       "quantity": 0
+    },
+    {
+      "imgId": 4,
+      "url":"http://www.lunch.pk/order/wp-content/uploads/2017/11/baingan-regularbrd-2B123-640x641-638x349.jpg",
+      "title": "Daal chawal",
+      "price": 100,
+      "quantity": 0
+    
+    },
+    {
+      "imgId": 4,
+      "url":"http://www.bhojanyan.com/wp-content/uploads/2017/04/nonveg-thali.png",
+      "title": "Veg meals",
+      "price": 160,
+      "quantity": 0
+    
     }
   ]
